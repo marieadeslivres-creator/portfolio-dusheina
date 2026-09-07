@@ -1,0 +1,296 @@
+:root {
+  --paper: #f3eee4;
+  --ink: #1b1814;
+  --ink-soft: #4a433c;
+  --forest: #3c5346;
+  --forest-deep: #2a3b32;
+  --rust: #9c4b38;
+  --rule: #d4cbbd;
+  --white: #faf7f1;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #cfc6b6;
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+a {
+  color: var(--forest-deep);
+  text-underline-offset: 2px;
+}
+
+a:hover { color: var(--rust); }
+
+.sheet {
+  max-width: 820px;
+  margin: 28px auto 56px;
+  background: var(--paper);
+  padding: 36px 44px 40px;
+  box-shadow: 0 18px 50px rgba(40, 30, 16, 0.18);
+}
+
+.kicker {
+  margin: 0 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.cv-head {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 28px;
+  align-items: start;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(34px, 5.5vw, 48px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: var(--rust);
+  font-weight: 600;
+}
+
+.lede {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  max-width: 42em;
+}
+
+.contacts-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 13px;
+}
+
+.contacts-inline li {
+  position: relative;
+}
+
+.contacts-inline li:not(:last-child)::after {
+  content: "·";
+  position: absolute;
+  right: -10px;
+  color: var(--rule);
+}
+
+.portrait {
+  margin: 0;
+  justify-self: end;
+  width: min(100%, 200px);
+}
+
+.portrait img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+  border-radius: 2px;
+  filter: saturate(0.92) contrast(1.04);
+}
+
+h2 {
+  margin: 22px 0 8px;
+  font-family: "Fraunces", serif;
+  font-size: 22px;
+  font-weight: 500;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 14px 18px;
+  padding: 12px 0;
+  border-top: 1px solid transparent;
+}
+
+.job + .job {
+  border-top: 1px solid var(--rule);
+}
+
+.when {
+  margin: 0 0 4px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.job h3 {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.where {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.job ul {
+  margin: 0;
+  padding: 0 0 0 16px;
+  color: var(--ink-soft);
+}
+
+.job li + li { margin-top: 4px; }
+
+.result-list {
+  margin: 0;
+  padding: 12px 16px 12px 32px;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+}
+
+.result-list li + li { margin-top: 6px; }
+
+.skills-block {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 14px 16px;
+  color: var(--ink-soft);
+}
+
+.skills-block p {
+  margin: 0;
+}
+
+.skills-block p + p {
+  margin-top: 8px;
+}
+
+.skills-block strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.job-edu ul {
+  color: var(--ink-soft);
+}
+
+.cv-foot {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.cv-foot p { margin: 0; }
+
+.print-hint {
+  margin-top: 6px !important;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 700px) {
+  .sheet {
+    margin: 0;
+    padding: 24px 18px 40px;
+  }
+
+  .cv-head {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    order: -1;
+    justify-self: start;
+    width: 160px;
+  }
+
+  .job {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .contacts-inline li:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+@media print {
+  body {
+    background: white;
+    font-size: 10.5pt;
+    line-height: 1.35;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    box-shadow: none;
+  }
+
+  .print-hint { display: none; }
+
+  .cv-head {
+    gap: 18px;
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+  }
+
+  h1 { font-size: 28pt; }
+  h2 {
+    font-size: 13pt;
+    margin: 14px 0 6px;
+  }
+
+  .portrait { width: 132px; }
+
+  .job {
+    grid-template-columns: 140px 1fr;
+    padding: 8px 0;
+    break-inside: avoid;
+  }
+
+  .results,
+  .skills-block,
+  .job-edu {
+    break-inside: avoid;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+}
