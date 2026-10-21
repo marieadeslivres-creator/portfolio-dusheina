@@ -292,6 +292,22 @@ h2 span {
   font-size: 15px;
 }
 
+.case dd ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+}
+
+.case dd li + li {
+  margin-top: 6px;
+}
+
+.case-note {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
 .links {
   margin-top: auto;
   margin-bottom: 0;
